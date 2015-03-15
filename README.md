@@ -9,16 +9,16 @@ Normalize an array of numbers to the range [0..1], or [0..max]
 # Use it
     
     var normalize = require('nylira-normalize')
-    var numbers = [1,2,3,4,5]
+    var numbers = [-20, -10, 0, 10, 20]
 
     // normalize the numbers to [0..1]
     normalize(numbers)
 
     // output:
-    // [0.3333333333333333, 0.5, 0.6666666666666666, 0.8333333333333334, 1]
+    // [0.2, 0.4, 0.6, 0.8, 1]
 
-    // normalize the numbers to [0..67]
-    normalize(numbers, 67)
+    // normalize the numbers to [0..60]
+    normalize(numbers, 60)
 
     // output:
-    // [22.333333333333332, 33.5, 44.666666666666664, 55.833333333333336, 67]
+    // [0, 15, 30, 45, 60]

@@ -1,6 +1,6 @@
 {
   "name": "nylira-normalize",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Normalize an array of numbers to 0..max",
   "main": "index.js",
   "scripts": {
