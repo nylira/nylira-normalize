@@ -1,10 +1,10 @@
 {
   "name": "nylira-normalize",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Normalize an array of numbers to 0..max",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",

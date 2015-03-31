@@ -21,8 +21,11 @@ function arrayMin(numbers) {
 }
 
 // given an array of negative and positive numbers, this function normalizes
-// all the values between 0.0 and outputMax
-function normalize(values, outputMax) {
+// all the values between outputMin and outputMax
+function normalize(values, outputMin, outputMax) {
+  // set outputMin to 0 if not defined
+  outputMin = outputMin !== undefined ? outputMin : 0
+
   // set outputMax to 1 if not defined
   outputMax = outputMax !== undefined ? outputMax : 1
 
@@ -31,24 +34,21 @@ function normalize(values, outputMax) {
   var min = arrayMin(values)
 
   for(var i=0; i < values.length; i++) {
-    if(min < 0) {
+
+    if(min < 0 && outputMin === 0) {
       output[i] = (values[i] - min) / (max - min) * outputMax
+
+    } else if(outputMin < 0 || outputMin > 0) {
+      output[i] = (values[i] - min) / (max - min) * (outputMax - outputMin) + outputMin
+
     } else {
+
       output[i] = values[i] / max * outputMax
     }
   }
 
   return output
 }
-
-/* tests */
-
-/*
-var test = normalize([-20,-10,0,10,20])
-var test2 = normalize([-20,-10,0,10,20], 60)
-console.log(test)
-console.log(test2)
-*/
 
 module.exports = normalize
 }())
